@@ -1,18 +1,31 @@
 import { useState } from "react";
-import WebChoice from "./webChoice";
 
-const Login = () => {
-  const [isLogged, setIsLogged] = useState(false);
+const Login = ({ onLogin }: { onLogin: () => void }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    // Handle login logic (e.g., API request)
+    // For now, we'll assume login is successful
+    onLogin(); // Trigger login state change in parent component
+  };
+
   return (
-    <>
-      {isLogged ? (
-        <div>
-          <WebChoice />
-        </div>
-      ) : (
-        <button onClick={() => setIsLogged(!isLogged)}>Login</button>
-      )}
-    </>
+    <div>
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Username"
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      />
+      <button onClick={handleLogin}>Login</button>
+    </div>
   );
 };
 
