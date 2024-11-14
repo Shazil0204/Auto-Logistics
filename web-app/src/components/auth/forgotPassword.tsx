@@ -1,4 +1,3 @@
-// components/auth/ForgotPassword.tsx
 interface ForgotPasswordProps {
   onResetPassword: () => void;
 }

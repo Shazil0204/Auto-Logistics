@@ -1,4 +1,3 @@
-// components/auth/Authorization.tsx
 import React, { useState } from "react";
 import Login from "../screens/login";
 import ForgotPassword from "../components/auth/forgotPassword";
@@ -12,6 +11,10 @@ const Authorization: React.FC<authProp> = ({ onLogin }) => {
   const [currentView, setCurrentView] = useState<
     "login" | "forgotPassword" | "resetPassword"
   >("login");
+
+  const handleBackToDefault = () => {
+    setCurrentView("login");
+  };
 
   const handleForgotPassword = () => {
     setCurrentView("forgotPassword");
@@ -36,7 +39,9 @@ const Authorization: React.FC<authProp> = ({ onLogin }) => {
       {currentView === "forgotPassword" && (
         <ForgotPassword onResetPassword={handleResetPassword} />
       )}
-      {currentView === "resetPassword" && <ResetPassword />}
+      {currentView === "resetPassword" && (
+        <ResetPassword backToDefault={handleBackToDefault} />
+      )}
     </div>
   );
 };
