@@ -1,9 +1,8 @@
-import Navbar from "../../components/layout/navbar";
+import Header from "../../components/layout/header"
 
 const Search = () => {
   return (
     <>
-      <Navbar />
       <div>Search</div>
     </>
   );
