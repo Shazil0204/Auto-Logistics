@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Search from "./screens/router/search";
 import Issue from "./screens/router/issue";
 import Invoice from "./screens/router/invoice";

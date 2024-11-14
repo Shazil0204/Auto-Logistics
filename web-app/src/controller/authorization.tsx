@@ -25,23 +25,19 @@ const Authorization: React.FC<authProp> = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      {currentView === "login" && (
-        <Login onForgotPassword={handleForgotPassword}>
-          <div className="flex flex-col">
-            <div>Login Form</div> {/* Default design content here */}
-            <button className="bg-blue-400 p-10" onClick={onLogin}>
-              login
-            </button>
-          </div>
-        </Login>
-      )}
-      {currentView === "forgotPassword" && (
-        <ForgotPassword onResetPassword={handleResetPassword} />
-      )}
-      {currentView === "resetPassword" && (
-        <ResetPassword backToDefault={handleBackToDefault} />
-      )}
+    <div className="h-screen w-full flex flex-col justify-center items-center bg-[#00A0A0]">
+      <div className="p-5 bg-white shadow-[0_0px_60px_0px_rgba(0,0,0,0.4)]">
+        <img src="/zbc_black.jpg" />
+        {currentView === "login" && (
+          <Login onForgotPassword={handleForgotPassword} onLogin={onLogin} />
+        )}
+        {currentView === "forgotPassword" && (
+          <ForgotPassword onResetPassword={handleResetPassword} />
+        )}
+        {currentView === "resetPassword" && (
+          <ResetPassword backToDefault={handleBackToDefault} />
+        )}
+      </div>
     </div>
   );
 };
