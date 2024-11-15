@@ -5,7 +5,7 @@ import Invoice from "./screens/router/invoice";
 import WebChoice from "./screens/webChoice";
 import { useState } from "react";
 import NotFound from "./screens/notFound";
-import Authorization from "./controller/Authorization";
+import Authorization from "./controller/authorization";
 
 function App() {
   const [isLogged, setIsLogged] = useState<boolean>(false);
