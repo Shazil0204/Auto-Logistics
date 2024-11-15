@@ -32,7 +32,10 @@ const Authorization: React.FC<authProp> = ({ onLogin }) => {
           <Login onForgotPassword={handleForgotPassword} onLogin={onLogin} />
         )}
         {currentView === "forgotPassword" && (
-          <ForgotPassword onResetPassword={handleResetPassword} />
+          <ForgotPassword
+            onResetPassword={handleResetPassword}
+            backToDefault={handleBackToDefault}
+          />
         )}
         {currentView === "resetPassword" && (
           <ResetPassword backToDefault={handleBackToDefault} />
