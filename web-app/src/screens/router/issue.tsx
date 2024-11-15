@@ -1,5 +1,12 @@
+import Header from "../../components/layout/header"
+
 const Issue = () => {
-  return <div>Issue</div>;
+  return (
+    <>
+      <Header/>
+      <div>Issue</div>
+    </> 
+  )
 };
 
 export default Issue;
