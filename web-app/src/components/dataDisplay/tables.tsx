@@ -1,7 +1,7 @@
 import React from "react";
 
 type TableProps = {
-  headers: React.ReactNode[]; // Array of header nodes
+  headers: string[]; // Array of header nodes
   children: React.ReactNode; // Table rows passed as children
 };
 
@@ -14,7 +14,9 @@ const Table: React.FC<TableProps> = ({ headers, children }) => {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className="px-6 py-3 text-gray-700 font-medium text-sm border-b max-w-full"
+                className={`px-6 py-3 bg-[#008080] border-2 text-white font-bold text-sm max-w-full ${
+                  header === "id" ? "hidden md:table-cell" : ""
+                }`}
               >
                 {header}
               </th>
