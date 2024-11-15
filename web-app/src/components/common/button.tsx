@@ -27,7 +27,7 @@ const CustomButton: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClickFunction}
-      className="hover:scale-105 duration-300 p-4 flex items-center justify-center cursor-pointer"
+      className="hover:scale-95 duration-300 p-4 flex items-center justify-center cursor-pointer"
       style={{
         color: textColor || "white",
         backgroundColor: backgroundColor || "black",
